@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enfQ® - Inteligência Acadêmica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ai-blue: #1a73e8;
+            --ai-glow: linear-gradient(135deg, #4285f4, #9b51e0, #ffffff);
+            --bg-dark: #000000;
+            --surface: #0a0a0a;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #e8eaed;
+            letter-spacing: -0.01em;
+        }
+        .font-header { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .ai-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .ai-card:hover {
+            border-color: rgba(66, 133, 244, 0.4);
+            background: #0f0f0f;
+        }
+
+        .ai-btn-primary {
+            background: #ffffff;
+            color: #000000;
+            border-radius: 100px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .ai-btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .ai-text-gradient {
+            background: linear-gradient(to right, #ffffff, #a8c7fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ai-glow-border {
+            position: relative;
+        }
+        .ai-glow-border::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: var(--ai-glow);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .nav-minimal {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(24px);
+            border-top: 1px solid var(--border);
+        }
+
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        .ai-loader {
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="antialiased">
+    <div id="root"></div>
+</body>
+</html>
